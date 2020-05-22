@@ -24,7 +24,7 @@ export default function Contact() {
             <div className="form">
               <textarea name="message" className="form-control" rows="10" placeholder="Hello there buddy"/>
             </div>
-                      {/* Message */}
+                      {/* Submit */}
             <div className="form-group mt-3">
               <input type="submit" value="Send" className="form-control bg-primary text-white"/>
             </div>      
