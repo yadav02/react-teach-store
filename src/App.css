@@ -45,5 +45,7 @@ body{
   color: var(--primaryColor);
   outline-color:var(--darkGrey) ;
 
-
+}
+body{
+  overflow-x: hidden !important;
 }

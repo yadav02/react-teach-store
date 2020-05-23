@@ -27,7 +27,7 @@ export default function Contact() {
                       {/* Submit */}
             <div className="form-group mt-3">
               <input type="submit" value="Send" className="form-control bg-primary text-white"/>
-            </div>      
+            </div>    
          </form>
         </div>
      </div>
