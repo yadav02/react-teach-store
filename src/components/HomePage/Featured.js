@@ -10,7 +10,7 @@ export default function Featured() {
         <section className="py-5">
          <div className="container">
            {/* Title */}
-          <Title title="Featured Productss" center="true"/>
+          <Title title="Featured Products" center="true"/>
               {/* Products */}
            <div className="row my-5">
             <ProductConsumer>
