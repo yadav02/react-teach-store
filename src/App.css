@@ -49,3 +49,10 @@ body{
 body{
   overflow-x: hidden !important;
 }
+::-webkit-scrollbar{
+  width: 8px;
+  background-color: var(--mainWhite);
+}
+::-webkit-scrollbar-thumb{
+ background-color: var(--primaryColor);
+}
