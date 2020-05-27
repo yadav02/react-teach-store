@@ -8,7 +8,7 @@ export default function Product({product}) {
     return (
       <ProductConsumer>
         {value => {
-            const {addToCart, setSingleProduct} =value;
+            const {addToCart, setSingleProduct} = value;
             return (
               <ProductWrapper className="col-10 mx-auto col-sm-8 col-md-6 col-lg-4 my-3">
                 <div className="card">
@@ -18,7 +18,7 @@ export default function Product({product}) {
                     <Link to={`/products/${product.id}`} onClick={() => setSingleProduct(product.id)}>
                      <FaSearch className="icon"/>
                     </Link>
-                    <FaCartPlus className="icon" onClick={()=> addToCart(product.id)}/>
+                    <FaCartPlus className="icon" onClick={() => addToCart(product.id)}/>
                     </div>
                   </div>
                   <div className="card-body d-flex justify-content-between">

@@ -7,7 +7,7 @@ import Product from '../Product';
 export default function Products() {
     return (
         <ProductConsumer>
-        {value => {
+          {value => {
             const {filteredProducts} = value;
             return (
               <section className="py-5">

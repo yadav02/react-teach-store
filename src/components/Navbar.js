@@ -11,16 +11,17 @@ export default function Navbar() {
             const {cartItems, handleSidebar, handleCart} = value;
             return (
               <NavWrapper>
-                    <div className ="nav-center">
-                     <FaBars className="nav-icon" onClick={handleSidebar}/>
-                     <img src={logo} alt="Tech store Logo"/>
-                     <div className="nav-cart">
-                     <FaCartPlus className="nav-icon" onClick={handleCart} />
-                     <div className="cart-items">{cartItems}</div>
-                     </div>
-                    </div>    
-              </NavWrapper>
-            ) 
+                  <div className ="nav-center">
+                    <FaBars className="nav-icon" onClick={handleSidebar}/>
+                      <img src={logo} alt="Tech store Logo"/>
+                       <div className="nav-cart">
+                        <FaCartPlus className="nav-icon" onClick={handleCart} />
+                         <div className="cart-items">{cartItems}
+                        </div>
+                      </div>
+                  </div>    
+                  </NavWrapper>
+               ) 
           }}
          </ProductConsumer>  
       
