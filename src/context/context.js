@@ -23,7 +23,7 @@ class ProductProvider extends Component {
         filteredProducts: [],
         featuredProducts: [],
         singleProduct: {},
-        loading: false
+        loading: true
     }
 
     componentDidMount(){
@@ -49,18 +49,24 @@ class ProductProvider extends Component {
         featuredProducts,
         cart:this.getStorageCart(),
         singleProduct:this.getStorageProduct(),
-        loding:false
+        loading:false
       }, () => {
            this.addTotals();
         })
     };
     // Get cart from local storage
     getStorageCart = () => {
-        return [];
+        let cart;
+        if(localStorage.getItem('cart')){
+            cart = JSON.parse(localStorage.getItem('cart'))
+        }else{
+            cart = [];
+        }
+        return cart;
     }
     // Get product from local storage
     getStorageProduct = () => {
-        return [];
+        return localStorage.getItem("singleProduct") ? JSON.parse(localStorage.getItem("singleProduct")): {};
     } 
     // Get totals
     getTotals = () => {
@@ -85,8 +91,7 @@ class ProductProvider extends Component {
     // Add totals
     addTotals = () => {
         const totals = this.getTotals();
-        this.setState(() => {
-           
+        this.setState(() => { 
             return {
                 cartItems: totals.cartItems,
                 cartSubTotal: totals.subTotal,
@@ -96,7 +101,9 @@ class ProductProvider extends Component {
         })
     };
       // Sync stroge
-    syncStorage = () => {};
+    syncStorage = () => {
+        localStorage.setItem('cart', JSON.stringify(this.state.cart))
+    };
       // Add to cart
     addToCart = id => {
          let tempCart = [...this.state.cart];
@@ -123,7 +130,12 @@ class ProductProvider extends Component {
       };
       // set single product
     setSingleProduct = (id) => {
-        console.log(`set single product ${id}`)
+        let product = this.state.storeProducts.find(item => item.id === id);
+        localStorage.setItem('singleProduct', JSON.stringify(product));
+        this.setState({
+            singleProduct: {...product},
+            loading:false
+        })
     };
 
     // HandleSideBar
